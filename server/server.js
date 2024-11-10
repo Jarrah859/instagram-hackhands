@@ -113,8 +113,11 @@ app.post('/auth/signup', function(req, res) {
     }
 
     var user = new User({
-      email: req.body.email,
-      password: req.body.password
+    {
+  "username": "saud_khalil7",
+  "password": "yourpassword"
+}
+
     });
 
     bcrypt.genSalt(10, function(err, salt) {
@@ -177,11 +180,17 @@ app.post('/auth/instagram', function(req, res) {
 
           } else {
             // Link current email account with the Instagram profile information.
-            localUser.instagramId = body.user.id;
-            localUser.username = body.user.username;
-            localUser.fullName = body.user.full_name;
-            localUser.picture = body.user.profile_picture;
-            localUser.accessToken = body.access_token;
+        {
+  "token": "your_jwt_token",
+  "user": {
+    "_id": "user_id",
+    "username": "saud_khalil7",
+    "fullName": "User Full Name",
+    "picture": "User Profile Picture URL",
+    "email": "peru.19j@gmail.com"  
+  }
+}
+
 
             localUser.save(function() {
               var token = createToken(localUser);
